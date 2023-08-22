@@ -1,4 +1,4 @@
-package com.example.product;
+package com.example.main.product;
 
 import org.springframework.util.Assert;
 

@@ -1,4 +1,4 @@
-package com.example.product;
+package com.example.main.product;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -17,8 +17,7 @@ public class ProductApiTest extends ApiTest {
 	@Test
 	void addProduct() {
 		final var request = getAddProductRequest();
-		final var response = addProductRequest(
-			request);
+		final var response = addProductRequest(request);
 
 		assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
 	}
