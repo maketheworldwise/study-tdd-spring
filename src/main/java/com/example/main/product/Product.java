@@ -34,4 +34,14 @@ class Product {
 		this.price = price;
 		this.discountPolicy = discountPolicy;
 	}
+
+	public void update(String name, int price, DiscountPolicy discountPolicy) {
+		Assert.hasText(name, "name must be declared");
+		Assert.isTrue(price > 0, "price must be over 0");
+		Assert.notNull(discountPolicy, "discount policy required");
+		this.name = name;
+		this.price = price;
+		this.discountPolicy = discountPolicy;
+
+	}
 }

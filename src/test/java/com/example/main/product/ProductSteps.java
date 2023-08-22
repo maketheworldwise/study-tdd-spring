@@ -27,4 +27,16 @@ public class ProductSteps {
 		final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
 		return new AddProductRequest(name, price, discountPolicy);
 	}
+
+	public static ExtractableResponse<Response> getProductResponse(Long productId) {
+		return RestAssured.given()
+			.log()
+			.all()
+			.when()
+			.get("/products/{productId}", productId)
+			.then()
+			.log()
+			.all()
+			.extract();
+	}
 }
