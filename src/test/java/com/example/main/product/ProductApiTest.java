@@ -7,6 +7,10 @@ import org.springframework.http.HttpStatus;
 
 import com.example.main.ApiTest;
 
+import io.restassured.RestAssured;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
+
 public class ProductApiTest extends ApiTest {
 
 	@Test
@@ -15,6 +19,25 @@ public class ProductApiTest extends ApiTest {
 		final var response = ProductSteps.addProductRequest(request);
 
 		assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
+	}
+
+	@Test
+	void getProduct() {
+		ProductSteps.addProductRequest(ProductSteps.getAddProductRequest());
+		Long productId = 1L;
+
+		ExtractableResponse<Response> response = RestAssured.given()
+			.log()
+			.all()
+			.when()
+			.get("/products/{productId}", productId)
+			.then()
+			.log()
+			.all()
+			.extract();
+
+		assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+		assertThat(response.jsonPath().getString("name")).isEqualTo("product");
 	}
 
 }
