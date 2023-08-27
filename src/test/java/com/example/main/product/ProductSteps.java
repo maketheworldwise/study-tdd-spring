@@ -39,4 +39,8 @@ public class ProductSteps {
 			.all()
 			.extract();
 	}
+
+	static UpdateProductRequest getUpdateProductRequest() {
+		return new UpdateProductRequest("modify", 2000, DiscountPolicy.NONE);
+	}
 }
