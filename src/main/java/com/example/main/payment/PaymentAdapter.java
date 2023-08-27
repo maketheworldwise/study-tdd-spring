@@ -3,23 +3,24 @@ package com.example.main.payment;
 import org.springframework.stereotype.Component;
 
 import com.example.main.order.Order;
-import com.example.main.product.DiscountPolicy;
-import com.example.main.product.Product;
+import com.example.main.order.OrderRepository;
 
 @Component
 class PaymentAdapter implements PaymentPort {
 	private final PaymentGateway paymentGateway;
 	private final PaymentRepository paymentRepository;
+	private final OrderRepository orderRepository;
 
-	public PaymentAdapter(PaymentGateway paymentGateway, PaymentRepository paymentRepository) {
+	public PaymentAdapter(PaymentGateway paymentGateway, PaymentRepository paymentRepository,
+		OrderRepository orderRepository) {
 		this.paymentGateway = paymentGateway;
 		this.paymentRepository = paymentRepository;
+		this.orderRepository = orderRepository;
 	}
 
 	@Override
 	public Order getOrder(Long orderId) {
-		return new Order(new Product("product", 1000, DiscountPolicy.NONE), 2);
-
+		return orderRepository.findById(orderId).orElseThrow(() -> new IllegalArgumentException("order not found"));
 	}
 
 	@Override
