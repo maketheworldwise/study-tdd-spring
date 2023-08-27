@@ -1,8 +1,11 @@
 package com.example.main.order;
 
+import org.springframework.stereotype.Component;
+
 import com.example.main.product.Product;
 import com.example.main.product.ProductRepository;
 
+@Component
 class OrderAdapter implements OrderPort {
 	private final ProductRepository productRepository;
 	private OrderRepository orderRepository;

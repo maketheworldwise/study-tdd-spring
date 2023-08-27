@@ -1,10 +1,13 @@
 package com.example.main.order;
 
+import org.springframework.stereotype.Component;
+
 import com.example.main.product.Product;
 
+@Component
 class OrderService {
 
-	private OrderPort orderPort;
+	private final OrderPort orderPort;
 
 	public OrderService(final OrderPort orderPort) {
 		this.orderPort = orderPort;
