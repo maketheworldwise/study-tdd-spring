@@ -8,7 +8,7 @@ import com.example.main.product.ProductRepository;
 @Component
 class OrderAdapter implements OrderPort {
 	private final ProductRepository productRepository;
-	private OrderRepository orderRepository;
+	private final OrderRepository orderRepository;
 
 	public OrderAdapter(final ProductRepository productRepository, final OrderRepository orderRepository) {
 		this.productRepository = productRepository;

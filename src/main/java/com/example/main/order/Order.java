@@ -4,10 +4,31 @@ import org.springframework.util.Assert;
 
 import com.example.main.product.Product;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "orders")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 class Order {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private final Product product;
-	private final int quantity;
+
+	@OneToOne
+	private Product product;
+
+	@Column
+	private int quantity;
 
 	public Order(Product product, int quantity) {
 		this.product = product;
@@ -16,11 +37,4 @@ class Order {
 		Assert.isTrue(quantity > 0, "quantity must be over 0");
 	}
 
-	public void assignId(Long aLong) {
-		this.id = id;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
 }
