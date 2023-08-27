@@ -37,4 +37,7 @@ public class Order {
 		Assert.isTrue(quantity > 0, "quantity must be over 0");
 	}
 
+	public int getTotalPrice() {
+		return product.getDiscountedPrice() * this.quantity;
+	}
 }

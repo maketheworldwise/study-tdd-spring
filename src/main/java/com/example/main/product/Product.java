@@ -45,4 +45,8 @@ class Product {
 		this.discountPolicy = discountPolicy;
 
 	}
+
+	public int getDiscountedPrice() {
+		return this.discountPolicy.applyDiscount(price);
+	}
 }
