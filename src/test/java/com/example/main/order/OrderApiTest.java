@@ -15,7 +15,7 @@ class OrderApiTest extends ApiTest {
 		ProductSteps.addProductRequest(ProductSteps.getAddProductRequest());
 		final CreateOrderRequest request = OrderSteps.getAddOrderRequest();
 
-		final var response = OrderSteps.getOrderRequest(request);
+		final var response = OrderSteps.addOrderRequest(request);
 
 		assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
 	}

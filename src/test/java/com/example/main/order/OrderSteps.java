@@ -7,7 +7,7 @@ import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 
 public class OrderSteps {
-	static ExtractableResponse<Response> getOrderRequest(CreateOrderRequest request) {
+	public static ExtractableResponse<Response> addOrderRequest(CreateOrderRequest request) {
 		return RestAssured.given()
 			.log()
 			.all()
