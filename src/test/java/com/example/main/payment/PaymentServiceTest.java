@@ -1,25 +1,32 @@
 package com.example.main.payment;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import com.example.main.order.OrderService;
+import com.example.main.order.OrderSteps;
+import com.example.main.product.ProductService;
+import com.example.main.product.ProductSteps;
+
+@SpringBootTest
 public class PaymentServiceTest {
 
+	@Autowired
 	private PaymentService paymentService;
-	private PaymentPort paymentPort;
 
-	@BeforeEach
-	void setUp() {
-		PaymentGateway paymentGateway = new ConsolePaymentGateway();
-		PaymentRepository paymentRepository = new PaymentRepository();
-		paymentPort = new PaymentAdapter(paymentGateway, paymentRepository);
-		paymentService = new PaymentService(paymentPort);
-	}
+	@Autowired
+	private ProductService productService;
+
+	@Autowired
+	private OrderService orderService;
 
 	@Test
 	void paymentOrder() {
-		final PaymentRequest request = PaymentSteps.getAddPaymentRequest();
+		productService.addProduct(ProductSteps.getAddProductRequest());
+		orderService.createOrder(OrderSteps.getAddOrderRequest());
 
+		final PaymentRequest request = PaymentSteps.getAddPaymentRequest();
 		paymentService.payment(request);
 	}
 }

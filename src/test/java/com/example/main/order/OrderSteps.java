@@ -21,7 +21,7 @@ public class OrderSteps {
 			.extract();
 	}
 
-	static CreateOrderRequest getAddOrderRequest() {
+	public static CreateOrderRequest getAddOrderRequest() {
 		final Long productId = 1L;
 		final int quantity = 2;
 		return new CreateOrderRequest(productId, quantity);

@@ -3,6 +3,9 @@ package com.example.main.payment;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 class PaymentRepository {
 
 	private Long sequence = 0L;
