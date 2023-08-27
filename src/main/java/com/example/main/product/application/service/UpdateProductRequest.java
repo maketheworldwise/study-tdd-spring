@@ -1,6 +1,8 @@
-package com.example.main.product;
+package com.example.main.product.application.service;
 
 import org.springframework.util.Assert;
+
+import com.example.main.product.domain.DiscountPolicy;
 
 public record UpdateProductRequest(String name, int price, DiscountPolicy discountPolicy) {
 	public UpdateProductRequest {

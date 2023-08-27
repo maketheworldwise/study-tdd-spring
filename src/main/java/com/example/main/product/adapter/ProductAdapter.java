@@ -1,6 +1,9 @@
-package com.example.main.product;
+package com.example.main.product.adapter;
 
 import org.springframework.stereotype.Component;
+
+import com.example.main.product.application.port.ProductPort;
+import com.example.main.product.domain.Product;
 
 @Component
 class ProductAdapter implements ProductPort {

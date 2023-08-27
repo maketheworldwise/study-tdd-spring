@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
 import com.example.main.ApiTest;
+import com.example.main.order.application.service.CreateOrderRequest;
 import com.example.main.product.ProductSteps;
 
 class OrderApiTest extends ApiTest {

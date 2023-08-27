@@ -2,14 +2,13 @@ package com.example.main.product;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.net.http.HttpResponse;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import com.example.main.ApiTest;
+import com.example.main.product.adapter.ProductRepository;
 
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;

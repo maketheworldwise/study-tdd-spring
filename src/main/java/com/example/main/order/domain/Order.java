@@ -1,8 +1,8 @@
-package com.example.main.order;
+package com.example.main.order.domain;
 
 import org.springframework.util.Assert;
 
-import com.example.main.product.Product;
+import com.example.main.product.domain.Product;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

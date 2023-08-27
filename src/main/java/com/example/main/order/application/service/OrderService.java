@@ -1,4 +1,4 @@
-package com.example.main.order;
+package com.example.main.order.application.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.main.product.Product;
+import com.example.main.order.application.port.OrderPort;
+import com.example.main.order.domain.Order;
+import com.example.main.product.domain.Product;
 
 import jakarta.transaction.Transactional;
 

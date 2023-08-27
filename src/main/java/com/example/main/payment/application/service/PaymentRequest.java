@@ -1,9 +1,9 @@
-package com.example.main.payment;
+package com.example.main.payment.application.service;
 
 import org.springframework.util.Assert;
 
-record PaymentRequest(Long orderId, String cardNumber) {
-	PaymentRequest(Long orderId, String cardNumber) {
+public record PaymentRequest(Long orderId, String cardNumber) {
+	public PaymentRequest(Long orderId, String cardNumber) {
 		this.orderId = orderId;
 		this.cardNumber = cardNumber;
 		Assert.notNull(orderId, "orderId must be required");

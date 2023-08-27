@@ -4,6 +4,9 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.example.main.product.domain.DiscountPolicy;
+import com.example.main.product.domain.Product;
+
 class ProductTest {
 
 	@Test

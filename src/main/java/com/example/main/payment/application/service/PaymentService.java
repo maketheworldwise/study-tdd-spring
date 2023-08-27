@@ -1,13 +1,14 @@
-package com.example.main.payment;
+package com.example.main.payment.application.service;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.main.order.Order;
+import com.example.main.order.domain.Order;
+import com.example.main.payment.application.port.PaymentPort;
+import com.example.main.payment.domain.Payment;
 
 import jakarta.transaction.Transactional;
 

@@ -1,8 +1,8 @@
-package com.example.main.payment;
+package com.example.main.payment.domain;
 
 import org.springframework.util.Assert;
 
-import com.example.main.order.Order;
+import com.example.main.order.domain.Order;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
